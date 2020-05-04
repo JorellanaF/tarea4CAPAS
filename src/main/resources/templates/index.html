@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <meta charset="ISO-8859-1">
+    <title>Nuevo producto</title>
+</head>
+<body>
+    <!--/*@thymesVar id="producto" type="com.example.tarea4capas.domain.Producto"*/-->
+    <form class="m-3" th:action="@{/resultado}" method="post" th:object="${producto}">
+        <h1 class="mb-3 text-primary">Ingresar nuevo producto</h1>
+        <div class="form-group row">
+            <label class="col-2">Codigo de Producto Universal</label>
+            <input class="col-3" th:field="*{CPU}" type="number" placeholder="Ingrese codigo">
+            <span class="col-3" th:errors="*{CPU}" style="color: #FF0000"></span>
+        </div>
+        <div class="form-group row">
+            <label class="col-2">Nombre del producto</label>
+            <input class="col-3" th:field="*{nombre}" type="text" placeholder="Ingrese nombre">
+            <span class="col-3" th:errors="*{nombre}" style="color: #FF0000"></span>
+        </div>
+        <div class="form-group row">
+            <label class="col-2">Marca</label>
+            <input class="col-3" th:field="*{marca}" type="text" placeholder="Marca">
+            <span class="col-3" th:errors="*{marca}" style="color: #FF0000"></span>
+        </div>
+        <div class="form-group row">
+            <label class="col-2">Descripcion</label>
+            <textarea class="col-3" rows="5" th:field="*{descripcion}" type="number" placeholder="Descripcion del Producto"></textarea>
+            <span class="col-3" th:errors="*{descripcion}" style="color: #FF0000"></span>
+        </div>
+        <div class="form-group row">
+            <label class="col-2">Existencia del Producto</label>
+            <input class="col-3" th:field="*{existencia}" type="text" placeholder="Cantidad">
+            <span class="col-3" th:errors="*{existencia}" style="color: #FF0000"></span>
+        </div>
+        <div class="form-group row">
+            <label class="col-2">Fecha de ingreso</label>
+            <input class="col-3" th:field="*{fecha}" type="date" >
+            <span class="col-3" th:errors="*{fecha}" style="color: #FF0000"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Guardar">
+        </div>
+    </form>
+</body>
+</html>
